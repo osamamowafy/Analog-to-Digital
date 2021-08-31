@@ -1,0 +1,82 @@
+**.subckt comparator
+XM3 IBIAS1 IBIAS1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 w=5 l=0.5 m=1
+XM4 net4 IBIAS1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 w=25 l=0.5 m=2
+XM5 net5 IBIAS1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 w=25 l=0.5 m=2
+XM6 net3 VB1 net5 VDD sky130_fd_pr__pfet_g5v0d10v5 w=10 l=0.5 m=1
+XM7 VOUT VB1 net4 VDD sky130_fd_pr__pfet_g5v0d10v5 w=10 l=0.5 m=1
+XM8 IBIAS1 IBIAS1 net4 GND sky130_fd_pr__nfet_g5v0d10v5 w=5 l=0.5 m=1
+XM9 IBIAS1 IBIAS1 net5 GND sky130_fd_pr__nfet_g5v0d10v5 w=5 l=0.5 m=1
+XM10 net4 IN_pos IBIAS2 GND sky130_fd_pr__nfet_g5v0d10v5 w=25 l=0.5 m=9
+XM11 net5 IN_neg IBIAS2 GND sky130_fd_pr__nfet_g5v0d10v5 w=25 l=0.5 m=9
+XM12 net3 VB2 net2 GND sky130_fd_pr__nfet_g5v0d10v5 w=2.5 l=0.5 m=1
+XM13 VOUT VB2 net1 GND sky130_fd_pr__nfet_g5v0d10v5 w=2.5 l=0.5 m=1
+XM14 net2 net3 GND GND sky130_fd_pr__nfet_g5v0d10v5 w=2.5 l=0.5 m=1
+XM15 net1 net3 GND GND sky130_fd_pr__nfet_g5v0d10v5 w=2.5 l=0.5 m=1
+I1 IBIAS1 GND 40u
+I2 IBIAS2 GND 400u
+V1 VDD GND 3
+V2 VB1 GND 1.5
+V3 VB2 GND 1.5
+C1 VOUT GND 2.5p m=1
+V4 IN_neg GND 1.5
+V5 IN_pos IN_neg AC 1u
+**** begin user architecture code
+
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/esd_nfet_01v8/sky130_fd_pr__esd_nfet_01v8__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/esd_pfet_g5v0d10v5/sky130_fd_pr__esd_pfet_g5v0d10v5__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/esd_nfet_g5v0d10v5/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/models/corners/tt/nonfet.spice
+* Mismatch parameters
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__mismatch.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__mismatch.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__mismatch.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__mismatch.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__mismatch.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__mismatch.corner.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__mismatch.corner.spice
+* Resistor~/pdks/sky130A/libs.tech/ngspice/Capacitor
+.include ~/pdks/sky130A/libs.tech/ngspice/models/r+c/res_typical__cap_typical.spice
+.include ~/pdks/sky130A/libs.tech/ngspice/models/r+c/res_typical__cap_typical__lin.spice
+* Special cells
+.include ~/pdks/sky130A/libs.tech/ngspice/models/corners/tt/specialized_cells.spice
+* All models
+.include ~/pdks/sky130A/libs.tech/ngspice/models/all.spice
+* Corner
+.include ~/pdks/sky130A/libs.tech/ngspice/models/corners/tt/rf.spice
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/nand3/sky130_fd_sc_hd__nand3_1.spice
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/nand2/sky130_fd_sc_hd__nand2_1.spice
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/nor3/sky130_fd_sc_hd__nor3_1.spice
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/dfrtp/sky130_fd_sc_hd__dfrtp_1.spice
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/nor2/sky130_fd_sc_hd__nor2_1.spice
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/dlrbn/sky130_fd_sc_hd__dlrbn_1.spice
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/a31o/sky130_fd_sc_hd__a31o_2.spice
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/inv/sky130_fd_sc_hd__inv_1.spice
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/a222oi/sky130_fd_sc_hd__a222oi_1.spice
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/or2/sky130_fd_sc_hd__or2_1.spice
+.include ~/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/o221ai/sky130_fd_sc_hd__o221ai_1.spice
+
+
+
+
+.options filetype=ascii
+.ac dec 100 10 100Meg
+.save all
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+** flattened .save nodes
+.end
