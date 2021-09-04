@@ -12,7 +12,8 @@ The output and the input signals are shown at which shows the binary output is z
 
 The layout of the comparator is designed on an open-source tool called KLayout with Sky130 PDK libraries, the area of the layout is 17x12 µm^2. Physical verification steps include LVS & DRC are made in order to ensure the correctness of the layout design which shown below:  
 
-![Screenshot 2021-08-31 145730](https://user-images.githubusercontent.com/87280599/131506515-91726b93-1f5b-4c41-b6b0-45e43c92f824.jpg)
+![1](https://user-images.githubusercontent.com/87280599/132095841-8e50b1f6-cfa7-444f-8495-e53d5660c6d4.jpg)
+
 
 
 
