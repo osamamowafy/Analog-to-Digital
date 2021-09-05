@@ -1,0 +1,15 @@
+.subckt basic_opamp
+M3 IBIAS1 IBIAS1 VDD VP sky130_fd_pr__pfet_g5v0d10v5 w=5e+06u l=0.5e+06u 
+M4 net4 IBIAS1 VDD VP sky130_fd_pr__pfet_g5v0d10v5 w=25e+06u l=0.5e+06u 
+M5 net5 IBIAS1 VDD VP sky130_fd_pr__pfet_g5v0d10v5 w=25e+06u l=0.5e+06u 
+M6 net3 VB1 net5 VP sky130_fd_pr__pfet_g5v0d10v5 w=10e+06u l=0.5e+06u 
+M7 VOUT VB1 net4 VP sky130_fd_pr__pfet_g5v0d10v5 w=10e+06u l=0.5e+06u 
+M8 IBIAS1 IBIAS1 net4 VNB sky130_fd_pr__nfet_g5v0d10v5 w=5e+06u l=0.5e+06u 
+M9 IBIAS1 IBIAS1 net5 VNB sky130_fd_pr__nfet_g5v0d10v5 w=5e+06u l=0.5e+06u 
+M10 net4 IN_pos IBIAS2 VNB sky130_fd_pr__nfet_g5v0d10v5 w=25e+06u l=0.5e+06u 
+M11 net5 IN_neg IBIAS2 VNB sky130_fd_pr__nfet_g5v0d10v5 w=25e+06u l=0.5e+06u 
+M12 net3 VB2 net2 VNB sky130_fd_pr__nfet_g5v0d10v5 w=2.5e+06u l=0.5e+06u 
+M13 VOUT VB2 net1 VNB sky130_fd_pr__nfet_g5v0d10v5 w=2.5e+06u l=0.5e+06u 
+M14 net2 net3 GND VNB sky130_fd_pr__nfet_g5v0d10v5 w=2.5e+06u l=0.5e+06u 
+M15 net1 net3 GND VNB sky130_fd_pr__nfet_g5v0d10v5 w=2.5e+06u l=0.5e+06u 
+.ends
