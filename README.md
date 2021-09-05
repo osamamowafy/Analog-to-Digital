@@ -1,4 +1,4 @@
-# Analog-to-digital
+# Analog-to-Digital 
 
 # Comparator
 
