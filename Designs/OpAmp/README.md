@@ -5,8 +5,9 @@ Folded cascode operational ampliifer with Sky130 libraries is shown at the figur
 
 The ac analysis of the OpAmp is shown at the figure below which indicates the frequency response of the circuit and the Voltage gain. 
 
-![Screenshot from 2021-10-04 05-14-52](https://user-images.githubusercontent.com/87280599/135853991-ac2199ce-b267-4074-9d6a-e2a84692dabe.png)
-![Screenshot from 2021-10-04 05-33-56](https://user-images.githubusercontent.com/87280599/135854015-5e3f9c5a-e7eb-4a0a-b66f-3e87153d1257.png)
+![Screenshot from 2021-10-04 05-14-52](https://user-images.githubusercontent.com/87280599/135854364-820101b9-30e3-4e9a-91a9-7c8508db5222.png)
+![Screenshot from 2021-10-04 05-33-56](https://user-images.githubusercontent.com/87280599/135854494-52e430e1-3ea4-49d5-bd57-749823005ead.png)
+
 
 
 The layout of the OpAmp is designed on an open-source tool called KLayout with Sky130 PDK libraries, the area of the layout is 28x13 µm^2. Physical verification steps include LVS & DRC are made in order to ensure the correctness of the layout design which shown below:
